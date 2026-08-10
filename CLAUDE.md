@@ -29,7 +29,7 @@ AutoBoros runs autonomous agents over structured job queues on a 5-level executi
 
 ## System Architecture (documented here, implemented in the code repos)
 
-```
+```text
 React 19 Cockpit (Vite 6)
     ⇕ REST + WebSocket (JWT)
 FastAPI :8000  ←  SQLAlchemy async + Alembic (Postgres / SQLite)
