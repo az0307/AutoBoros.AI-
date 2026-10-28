@@ -18,7 +18,11 @@ FastAPI  (resolves approvals, broadcasts WS events)
 MCP server  (sandboxed tool access for LLM agents)
 ```
 
-**Code:** [Aurora-AI-Agency/autoboros/](https://github.com/az0307/Aurora-AI-Agency/tree/main/autoboros)
+**Code:** this repo holds only this README and `docs/TESTING.md`. The AutoBoros code was **removed from
+`Aurora-AI-Agency`** (only an orphaned lockfile remains there) and the intended homes,
+the private repos `az0307/autoboros-backend` and `az0307/autoboros-cockpit`, currently contain **only a
+placeholder CLAUDE.md** (Oct 2026). Until the code is restored there (it is in `Aurora-AI-Agency` git
+history), the quick start below cannot be run.
 
 - `backend/` — FastAPI + n8n bridge + MCP server (Python ≥3.11)
 - `cockpit/` — React 19 operator dashboard (Vite 6)
@@ -37,14 +41,12 @@ MCP server  (sandboxed tool access for LLM agents)
 ## Quick start
 
 ```bash
-# Backend (from Aurora-AI-Agency repo)
-cd autoboros/backend
+# Backend (az0307/autoboros-backend)
 pip install -e ".[dev]"
 DATABASE_URL="sqlite+aiosqlite:///./dev.db" SECRET_KEY=x AB_PASSWORD=autoboros \
   uvicorn app.main:app --reload
 
-# Cockpit
-cd autoboros/cockpit
+# Cockpit (az0307/autoboros-cockpit)
 npm install && npm run dev
 ```
 
@@ -58,7 +60,7 @@ Tests: `DATABASE_URL="sqlite+aiosqlite:///./t.db" SECRET_KEY=x AB_PASSWORD=autob
 - CORS explicit origin list — no wildcard in production
 - Prod refuses boot on default `SECRET_KEY` / `AB_PASSWORD`
 
-See `autoboros/docs/SECONDARY_REVIEW.md` for open P1 items (JWT revocation, Redis rate-limit, httpOnly cookies).
+See `docs/SECONDARY_REVIEW.md` in the backend repo for open P1 items (JWT revocation, Redis rate-limit, httpOnly cookies).
 
 ## Roadmap — Neural Network OS
 
