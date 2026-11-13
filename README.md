@@ -60,7 +60,9 @@ Tests: `DATABASE_URL="sqlite+aiosqlite:///./t.db" SECRET_KEY=x AB_PASSWORD=autob
 - CORS explicit origin list — no wildcard in production
 - Prod refuses boot on default `SECRET_KEY` / `AB_PASSWORD`
 
-See `docs/SECONDARY_REVIEW.md` in the backend repo for open P1 items (JWT revocation, Redis rate-limit, httpOnly cookies).
+The backend's historical secondary review is not present in its current placeholder checkout.
+Restore or locate that report and revalidate JWT revocation, Redis rate limiting and httpOnly-cookie
+handling before treating the historical security items as resolved.
 
 ## Roadmap — Neural Network OS
 
